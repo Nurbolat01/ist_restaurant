@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+
+	<section class="hero-wrap hero-wrap-2" style="background: url('{{ STATIC_URL }}/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate text-center mb-5">
+					<h1 class="mb-2 bread">Menu</h1>
+					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Menu <i class="fa fa-chevron-right"></i></span></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-2">
+				<div class="col-md-7 text-center heading-section ftco-animate">
+					<span class="subheading">Специално для вас</span>
+					<h2 class="mb-4">Наша меню</h2>
+				</div>
+			</div>
+			<div class="row">
+				{% for category in categories %}
+				<div class="col-md-6 col-lg-4">
+					<div class="menu-wrap">
+						<div class="heading-menu text-center ftco-animate">
+							<h3>{{ category.name }}</h3>
+						</div>
+						{% for photo in category.items %}
+							<div class="menus d-flex ftco-animate">
+								<div class="menu-img img" style="background-image: url({{ photo.image.url }});"></div>
+								<div class="text">
+									<div class="d-flex">
+										<div class="one-half">
+											<h3><a class="myButton" 
+												data-photo-url="{{ photo.image.url }}" 
+												data-photo-title="{{ photo.name }}"
+												data-photo-price="{{ photo.price }}"
+												data-photo-description="{{ photo.description }}">{{ photo.name }}</a></h3>
+										</div>
+										<div class="one-forth">
+											<span class="price" data-food-price="{{ photo.price }}">{{ photo.price }}тг</span>
+										</div>
+									</div>
+									<p>
+										{% if photo.compound %}
+											<span>
+												{{ photo.compound }}
+											</span>
+										{% else %}
+											<span></span>
+										{% endif %}
+									</p>
+								</div>
+							</div>
+							<div id="myPopup" class="popup" style="z-index: 1000;">
+								<div class="popup-content">
+									<div class="product-card" style="margin: 120px auto;">
+								        <img src="{{ photo.image.url }}" alt="Product Image" class="product-image">
+								        <div class="product-details">
+								         	<h2 class="product-title" >{{ photo.name }}</h2>
+								         	{% if photo.description|length > 100 %}
+								              	<p class="product-description">{{ photo.description }}</p>
+								            {% elif photo.description|length > 10 %}
+								              	<p class="product-description">{{ photo.description }}</p>
+								            {% else %}
+								            	<p></p>
+								            {% endif %}
+								         	
+								         	<div style="display: flex;">
+								         		<p class="product-price">{{ photo.price }}</p><p style="font-size: 18px;"> тг</p>
+								         	</div>
+								         	
+								          <div class="buttons">
+								            <button class="button"  role="button"><a href="{% url 'posts' %}" class="readmore">Узнать историю блюда</a></button>
+								            <div class="nav-cancel is-active closebtn closePopup">
+								              X
+								            </div>
+								          </div>
+								        </div>
+								   	 </div>
+									</div>
+							</div>
+						
+						{% endfor %}
+						<span class="flat flaticon-bread" style="left: 0;"></span>
+						<span class="flat flaticon-breakfast" style="right: 0;"></span>
+					</div>
+				</div>
+				{% endfor %}
+				
+			</div>
+		</div>
+
+	</section>
+
+	
+	<!-- <section class="ftco-section ftco-wrap-about bg-primary ftco-no-pb ftco-no-pt">
+		<div class="container">
+			<div class="row no-gutters">
+				<div class="col-sm-12 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
+					<form action="#" class="appointment-form">
+						<h3 class="mb-3">Book your Table</h3>
+						<div class="row justify-content-center">
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="name" class="form-control" placeholder="Name">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="email" class="form-control" placeholder="Email">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Phone">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="input-wrap">
+										<div class="icon"><span class="fa fa-calendar"></span></div>
+										<input type="text" class="form-control book_date" placeholder="Check-In">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="input-wrap">
+										<div class="icon"><span class="fa fa-clock-o"></span></div>
+										<input type="text" class="form-control book_time" placeholder="Time">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="form-field">
+										<div class="select-wrap">
+											<div class="icon"><span class="fa fa-chevron-down"></span></div>
+											<select name="" id="" class="form-control">
+												<option value="">Guest</option>
+												<option value="">1</option>
+												<option value="">2</option>
+												<option value="">3</option>
+												<option value="">4</option>
+												<option value="">5</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="submit" value="Book Your Table Now" class="btn btn-white py-3 px-4">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section> -->
+{% endblock %}

@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{ STATIC_URL }}/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate text-center mb-5">
+        <h1 class="mb-2 bread">About</h1>
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>About <i class="fa fa-chevron-right"></i></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+ <div class="container">
+  <div class="row d-flex">
+    <div class="col-md-6 d-flex">
+     <div class="img img-2 w-100 mr-md-2" style="background-image: url('{{ STATIC_URL }}/images/bg_6.jpg');"></div>
+     <div class="img img-2 w-100 ml-md-2" style="background-image: url('{{ STATIC_URL }}/images/bg_4.jpg)';"></div>
+   </div>
+   <div class="col-md-6 ftco-animate makereservation p-4 p-md-5">
+     <div class="heading-section ftco-animate mb-5">
+      <span class="subheading">Секретный ингредиент</span>
+      <h2 class="mb-4">Нашего Ресторана</h2>
+      <p>Ингредиент – благодаря которому наши блюда всегда окутаны неповторимым вкусом и нежной гармонией. Этот ингредиент – любовь. Мы приглашаем вас насладиться каждой порцией, в которой заложено не только мастерство и тщательный отбор ингредиентов, но и глубокая забота, которую мы вкладываем в каждое блюдо. Любовь к кулинарному искусству – это то, что делает наши блюда действительно особенными.
+      </p>
+      <p><a href="#" class="btn btn-primary">Узнать подробнее</a></p>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({{ STATIC_URL }}/images/bg_4.jpg);" data-stellar-background-ratio="0.5">
+ <div class="container">
+  <div class="row d-md-flex align-items-center justify-content-center">
+   <div class="col-lg-10">
+    <div class="row d-md-flex align-items-center">
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="100">0</strong>
+            <span>Виды блюд</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="4000">0</strong>
+            <span>Подаваемые блюда</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="2">0</strong>
+            <span>Ресторан</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+        <div class="block-18">
+          <div class="text">
+            <strong class="number" data-number="12000">0</strong>
+            <span>Довольные гости</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb ftco-intro bg-primary">
+ <div class="container py-5">
+  <div class="row py-2">
+   <div class="col-md-12 text-center">
+    <h2>Турецкое аппетитное блюдо &amp; Диетические блюда</h2>
+    <a href="#" class="btn btn-white btn-outline-white">Связаться с нами</a>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="ftco-section testimony-section" style="background-image: url({{ STATIC_URL }}/images/bg_5.jpg);">
+ <div class="overlay"></div>
+ <div class="container">
+  <div class="row justify-content-center mb-3 pb-2">
+    <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+     <span class="subheading">IST</span>
+     <h2 class="mb-4">Отзывы довольных гостей</h2>
+   </div>
+ </div>
+ <div class="row ftco-animate justify-content-center">
+  <div class="col-md-7">
+    <div class="carousel-testimony owl-carousel ftco-owl">
+      <div class="item">
+        <div class="testimony-wrap text-center">
+          <div class="text p-3">
+            <p class="mb-4">Было все очень вкусно мне все понравилась, можно сказать самые вкусные донеры здесь.</p>
+            <div class="user-img mb-4" style="background-image: url({{ STATIC_URL }}/images/customer1.jpg)">
+             <span class="quote d-flex align-items-center justify-content-center">
+               <i class="fa fa-quote-left"></i>
+             </span>
+           </div>
+           <p class="name">Асель</p>
+           <span class="position">Гость</span>
+         </div>
+       </div>
+     </div>
+     <div class="item">
+      <div class="testimony-wrap text-center">
+        <div class="text p-3">
+          <p class="mb-4">Заехали один раз поужинать все было на высшем уровне, особенно понравилось блюдо Медалионы лукум советую попробовать.</p>
+          <div class="user-img mb-4" style="background-image: url('{{ STATIC_URL }}/images/customer2.jpg')">
+           <span class="quote d-flex align-items-center justify-content-center">
+             <i class="fa fa-quote-left"></i>
+           </span>
+         </div>
+         <p class="name">Карылгаш</p>
+         <span class="position">Гость</span>
+       </div>
+     </div>
+   </div>
+   <div class="item">
+    <div class="testimony-wrap text-center">
+      <div class="text p-3">
+        <p class="mb-4">Обожаю турецкую кухню здесь все всегда вкусно, всегда хорошо покормят, предоставят уют и удобства, чувствуешь себя как будто сидишь в Турций</p>
+        <div class="user-img mb-4" style="background-image: url({{ STATIC_URL }}/images/customer3.jpg)">
+         <span class="quote d-flex align-items-center justify-content-center">
+           <i class="fa fa-quote-left"></i>
+         </span>
+       </div>
+       <p class="name">Айгерим</p>
+       <span class="position">Гость</span>
+     </div>
+   </div>
+ </div>
+ <div class="item">
+  <div class="testimony-wrap text-center">
+    <div class="text p-3">
+      <p class="mb-4">Попробовала Адану кебаб вкусно было как и чечевичный суп, и здесь каждый раз что-то меняться добавляются новые блюда каждый раз, например я прошлый раз попробовала сырный суп которого не было в моем последним везите.</p>
+      <div class="user-img mb-4" style="background-image: url({{ STATIC_URL }}/images/customer4.jpg)">
+       <span class="quote d-flex align-items-center justify-content-center">
+         <i class="fa fa-quote-left"></i>
+       </span>
+     </div>
+     <p class="name">Маржан</p>
+     <span class="position">Гость</span>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock %}
